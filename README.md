@@ -9,12 +9,6 @@ A dynamic web-based dashboard to manage and control multiple projects (Live Serv
   </a>
 </p>
 
-<p align="center">
-  <img src="https://img.icons8.com/emoji/48/movie-camera.png" width="24" alt="Video Icon"/>
-  <strong>Live preview of the <code>serves-port</code> project in action</strong>
-</p>
-
-
 ---
 
 ## ✅ Main Features
