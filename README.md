@@ -4,17 +4,16 @@
 A dynamic web-based dashboard to manage and control multiple projects (Live Server, Flask, Node.js) via dedicated ports — all from a single unified interface on Windows.
 
 <p align="center">
-  <a href="screenshots/Screenshot.png">
-    <img src="screenshots/Screenshot.png" alt="Quick clone of the indexMD repository" width="600"/>
+  <a href="Screenshot/Screenshot.png">
+    <img src="Screenshot/Screenshot.png" alt="Live preview of the serves-port project" width="600"/>
   </a>
 </p>
 
 <p align="center">
   <img src="https://img.icons8.com/emoji/48/movie-camera.png" width="24" alt="Video Icon"/>
-  <strong>Quick Clone of the <code>indexMD</code> repository in action</strong>
+  <strong>Live preview of the <code>serves-port</code> project in action</strong>
 </p>
 
-<br>
 
 ---
 
