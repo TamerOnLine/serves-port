@@ -8,7 +8,7 @@ import platform
 
 app = Flask(__name__)
 
-# تحميل إعدادات المشاريع من قاعدة البيانات
+
 def load_projects():
     conn = sqlite3.connect("projects.db")
     conn.row_factory = sqlite3.Row

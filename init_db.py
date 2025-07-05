@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS projects (
 )
 """)
 
-# مثال: مشروع Flask
+
 cursor.execute("""
 INSERT INTO projects (id, name, type, path, port, entry)
 VALUES (?, ?, ?, ?, ?, ?)
@@ -27,7 +27,7 @@ VALUES (?, ?, ?, ?, ?, ?)
     "main.py"
 ))
 
-# مثال: مشروع Live Server
+
 cursor.execute("""
 INSERT INTO projects (id, name, type, path, port)
 VALUES (?, ?, ?, ?, ?)

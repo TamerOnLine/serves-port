@@ -1,0 +1,17 @@
+📁 serves-port/
+├── 📁 Screenshot/
+├── 📁 templates/
+│   └── index.html
+├── 📁 vscode/
+│   ├── launch.json
+│   └── tasks.json
+├── .gitignore
+├── LICENSE
+├── README.md
+├── controller.py
+├── create-venv.py
+├── init_db.py
+├── main.py
+├── projects.db
+├── projects.json
+└── requirements.txt

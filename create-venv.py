@@ -35,9 +35,9 @@ def setup_env(env_dir, python_version, requirements_file=None):
     else:
         print(f"⚠️ No {requirements_file} file found or not specified.")
 
-# ✅ إعداد البيئة الأساسية (تشغيل + تطوير)
+# ✅ 
 setup_env("venv", "3.12", "requirements.txt")
 #setup_env("venv_dev", "3.12", "Dev_requirements.txt")
 
-# ✅ إعداد بيئة التوثيق (gh-pages)
+# ✅ 
 #setup_env("venv_docs", "3.12", "gh-pages-requirements.txt")

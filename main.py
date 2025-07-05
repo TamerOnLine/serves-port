@@ -8,7 +8,7 @@ def home():
 
 if __name__ == "__main__":
     import sys
-    port = 5001  # الافتراضي
+    port = 5001  
     if "port" in sys.argv:
         idx = sys.argv.index("port")
         if idx + 1 < len(sys.argv):
