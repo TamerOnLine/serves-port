@@ -1,0 +1,108 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Control Panel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .project {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .project h2 {
+      margin-top: 0;
+    }
+    .actions button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .start { background-color: #4CAF50; color: white; }
+    .stop { background-color: #f44336; color: white; }
+    .open { background-color: #2196F3; color: white; }
+    .restart { background-color: #ff9800; color: white; }
+    .folder { background-color: #9c27b0; color: white; }
+    .logs { background-color: #607d8b; color: white; }
+    .status { font-weight: bold; margin-left: 10px; }
+    .kill-all {
+      display: block;
+      margin: 20px auto;
+      background-color: #000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🛠️ Project Control Panel</h1>
+
+  {% for project in projects %}
+    <div class="project">
+      <h2>{{ project.name }}
+        <span class="status" id="status-{{ project.id }}">🔴</span>
+      </h2>
+      <p><strong>Type:</strong> {{ project.type }}</p>
+      <p><strong>Port:</strong> {{ project.port }}</p>
+      <div class="actions">
+        <form method="post" action="/start/{{ project.id }}" style="display:inline">
+          <button class="start">▶️ Start</button>
+        </form>
+        <a href="/stop/{{ project.id }}">
+          <button class="stop">⏹️ Stop</button>
+        </a>
+        <a href="/restart/{{ project.id }}">
+          <button class="restart">🔄 Restart</button>
+        </a>
+        <a href="http://localhost:{{ project.port }}" target="_blank">
+          <button class="open">🌐 Open</button>
+        </a>
+        <a href="/open-folder/{{ project.id }}">
+          <button class="folder">📂 Folder</button>
+        </a>
+        <a href="/logs/{{ project.id }}" target="_blank">
+          <button class="logs">🔍 Logs</button>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+
+  <form action="/kill-all" method="post">
+    <button class="kill-all">🚫 Kill All</button>
+  </form>
+
+  <script>
+    async function updateStatuses() {
+      const res = await fetch('/status');
+      const data = await res.json();
+      for (const [id, isRunning] of Object.entries(data)) {
+        const statusEl = document.getElementById('status-' + id);
+        if (statusEl) {
+          statusEl.textContent = isRunning ? '🟢' : '🔴';
+        }
+      }
+    }
+    updateStatuses();
+    setInterval(updateStatuses, 3000);
+  </script>
+</body>
+</html>

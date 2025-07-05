@@ -1,0 +1,17 @@
+[
+  {
+    "id": "my-flask-app",
+    "name": "My Flask App",
+    "type": "flask",
+    "path": "C:/Users/Tamer/Documents/my-flask-app",
+    "port": 5610,
+    "entry": "main.py"
+  },
+  {
+    "id": "two-column-dynamic",
+    "name": "Two Column Dynamic",
+    "type": "live-server",
+    "path": "E:/resume-templates/templates/two-column-dynamic",
+    "port": 5510
+  }
+]
